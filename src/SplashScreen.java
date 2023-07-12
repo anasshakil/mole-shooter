@@ -9,15 +9,16 @@ public class SplashScreen extends javax.swing.JFrame {
         this.setUndecorated(true);
         initComponents();
         setBackground(new Color(0, 0, 0, 0));
-        setSize(1010, 1016);
+        setSize(512, 512);
         setResizable(false);
         setLocationRelativeTo(null);
         Thread t = new Thread() {
+            @Override
             public void run() {
                 try {
                     for (int i = 0; i <= 100; i++) {
                         Thread.sleep(40);
-                        jLabel2.setText(i + "%");
+                        progressLabel.setText(i + "%");
                         if (i == 100) {
                             MainGameGUI.mainG = new MainGameGUI();
                             MainGameGUI.mainG.backgroundMusic();
@@ -36,20 +37,20 @@ public class SplashScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        progressLabel = new javax.swing.JLabel();
+        bgLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Bradley Hand ITC", 1, 24)); // NOI18N
-        jLabel2.setText("0%");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(450, 670, 60, 50);
+        progressLabel.setFont(new java.awt.Font("Bradley Hand ITC", 1, 24)); // NOI18N
+        progressLabel.setText("0%");
+        getContentPane().add(progressLabel);
+        progressLabel.setBounds(210, 450, 60, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/splash.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(5, 5, 1000, 1000);
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/splash.png"))); // NOI18N
+        getContentPane().add(bgLabel);
+        bgLabel.setBounds(5, 5, 512, 512);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,7 +86,7 @@ public class SplashScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    public static javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel bgLabel;
+    public static javax.swing.JLabel progressLabel;
     // End of variables declaration//GEN-END:variables
 }
